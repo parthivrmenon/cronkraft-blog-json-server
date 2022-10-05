@@ -1,5 +1,7 @@
 {
-    "articles": [
+    "blogs":
+
+[
         {
             "slug": "my-first-article",
             "title": "My first article.",
