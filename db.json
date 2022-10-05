@@ -1,6 +1,20 @@
 {
     "articles": [
-        {},
+        {
+            "slug": "my-first-article",
+            "title": "My first article.",
+            "description":"This is the first article on cronktaft."
+        },
+        {
+            "slug": "my-second-article",
+            "title": "My second article.",
+            "description":"This is the second article on cronktaft."
+        },
+        {
+            "slug": "my-third-article",
+            "title": "My third article.",
+            "description":"This is the third article on cronktaft."
+        },
         {}
     ]
 }
