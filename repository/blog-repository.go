@@ -5,11 +5,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"parthivrmenon/conkraft-blog-json-server/entity"
 )
 
 type BlogRepository interface {
 	Retrieve() entity.Blogs
+	GetBlogBySlug(slug string) entity.Blog
 }
 
 type fileBlogRepository struct {
@@ -38,4 +40,23 @@ func New() BlogRepository {
 
 func (repo *fileBlogRepository) Retrieve() entity.Blogs {
 	return repo.blogs
+}
+
+func (repo *fileBlogRepository) GetBlogBySlug(slug string) entity.Blog {
+	for i := 0; i < len(repo.blogs.Blogs); i++ {
+		if repo.blogs.Blogs[i].Slug == slug {
+			fmt.Println("found blog with slug ", slug)
+			dat, err := os.ReadFile(repo.blogs.Blogs[i].File)
+			if err != nil {
+				panic(err)
+			}
+			fmt.Print(string(dat))
+			repo.blogs.Blogs[i].Body = string(dat)
+
+			return repo.blogs.Blogs[i]
+		}
+
+	}
+	return entity.Blog{}
+
 }

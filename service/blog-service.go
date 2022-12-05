@@ -7,6 +7,7 @@ import (
 
 type BlogService interface {
 	FindAll() entity.Blogs
+	GetBlogBySlug(slug string) entity.Blog
 }
 
 type blogService struct {
@@ -23,4 +24,9 @@ func New() BlogService {
 func (service *blogService) FindAll() entity.Blogs {
 
 	return service.repo.Retrieve()
+}
+
+func (service *blogService) GetBlogBySlug(slug string) entity.Blog {
+
+	return service.repo.GetBlogBySlug(slug)
 }

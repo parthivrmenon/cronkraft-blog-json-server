@@ -7,6 +7,7 @@ import (
 
 type BlogController interface {
 	FindAll() entity.Blogs
+	GetBlogBySlug(slug string) entity.Blog
 }
 
 type controller struct {
@@ -21,4 +22,8 @@ func New(service service.BlogService) BlogController {
 
 func (c *controller) FindAll() entity.Blogs {
 	return c.service.FindAll()
+}
+
+func (c *controller) GetBlogBySlug(slug string) entity.Blog {
+	return c.service.GetBlogBySlug(slug)
 }

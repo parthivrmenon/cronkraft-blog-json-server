@@ -3,19 +3,25 @@
 
 [
         {
-            "slug": "my-first-article",
-            "title": "My first article.",
-            "description":"This is the first article on cronktaft."
+            "slug": "to-clean-or-not-to-clean-my-desk",
+            "title": "To clean or not to clean my desk",
+            "description":"an age old mystery.. why is my desk always messy...",
+            "banner":"tabletop",
+            "file":"./blogs/to_clean_or_not_to_clean_my_desk.txt"
+            
         },
         {
             "slug": "my-second-article",
             "title": "My second article.",
-            "description":"This is the second article on cronktaft."
+            "description":"This is the second article on cronktaft.",
+            "banner":"tabletop"
+
         },
         {
             "slug": "my-third-article",
             "title": "My third article.",
-            "description":"This is the third article on cronktaft."
+            "description":"This is the third article on cronktaft.",
+            "banner":"tabletop"
         },
         {}
     ]
